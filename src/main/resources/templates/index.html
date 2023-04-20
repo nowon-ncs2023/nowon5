@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{ layout/layout :: basic(~{::head}, ~{::main}) }">
+<head>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/visual.js"></script>
+</head>
+<main>
+	<h1>메인영역</h1>
+	<div class="wrap ">
+		<aside id="visual">
+			<h1>비주얼영역</h1>
+			<div class="wrap">
+				<ol class="item-list">
+					<th:block th:each="i : ${#numbers.sequence(1,5)}">
+					<li class="item" >
+						<a href="#" th:style="|background-image: url('/images/visual/v${i}.png');|">[[${i}]]</a>
+					</li>
+					</th:block>
+				</ol>
+				<div class="btn-wrap">
+					<button class="btn prev" onclick="move(-1)">&lt;</button>
+					<button class="btn next" onclick="move(1)">&gt;</button>
+				</div>
+				
+				<ul class="bullet-wrap flex">
+					<li class="bullet" th:each="i : ${#numbers.sequence(1,5)}" th:text="${i}"></li>
+				</ul>
+				<div class="auto-wrap">
+					<button>
+						<span class="material-symbols-outlined" style="display: none;">play_arrow</span>
+						<span class="material-symbols-outlined">stop</span>
+					</button>
+					<span class="txt">
+						<span class="target">1</span>
+						/
+						<span class="tot">5</span>
+					</span>
+				</div>
+			</div>
+		</aside>
+		<section id="service">
+			<h1>서비스들</h1>
+			<div class="wrap view-size">
+				<ul class="flex center">
+					<li>
+						<a href="#">CLOVA</a>
+					</li>
+					<li>
+						<a href="#">네이버로그인</a>
+					</li>
+					<li>
+						<a href="#">papago</a>
+					</li>
+					<li>
+						<a href="#">서비스 API</a>
+					</li>
+					<li>
+						<a href="#">네이버 클라우드 플랫폼</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</main>
+</html>
