@@ -1,3 +1,86 @@
 @charset "UTF-8";
 
 /* 소연님 작성 영역 */
+footer{
+	/*height: 398px;
+	position: relative;
+	transform : translateY(-100%);*/
+	max-width: 102.4rem;
+    margin: 3rem auto 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+footer >.footer >.footer_menu{
+	display: flex;
+	justify-content: center;
+	/*height: auto;
+	min-height: 100%;
+	padding-bottom:398px; */
+}
+footer >.footer >.footer_menu >.footer_menu_line {
+	list-style: none;
+	border-top: 2px solid #a9a9a9;
+	border-bottom: 2px solid #a9a9a9;
+	padding: 20px 0px;
+}
+footer >.footer >.footer_menu >.footer_menu_line >li{
+	float: left;
+	font-size: 15px;
+	border-left:2px solid #a9a9a9;
+	padding: 0px 39px;
+
+}
+footer >.footer >.footer_menu >.footer_menu_line >li:first-child{
+	border-left: none;
+}
+
+#check-btn{
+	display: none;
+	position: absolute;
+}
+#check-btn:hover ~ .menu{
+	display: block;
+}
+.menu{
+	display: none;
+	margin-top:15px;
+	position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius:10px;
+    z-index: 1;	
+}
+.menu a{
+	font-size: 14px;
+	color: #292929;
+	line-height: 15px;
+}
+
+.Inter{
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+	padding: 0px 20px;
+	
+	
+	
+}
+.InterPark{
+	float: left;
+	border-right:2px solid #a9a9a9;
+	font-size: 15px;
+}
+
+.InterPark >.InterPark_adders ul{
+	padding: 0;
+	list-style: none;
+}
+.InterPark> .InterPark_adders ul >li{
+	float: left;
+}
+.InterParkCammers{
+	float: right;
+	margin-left: 10px;
+}
