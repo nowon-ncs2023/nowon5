@@ -12,4 +12,10 @@ public class MainController {
 		model.addAttribute("data", "login");
 		return "login";
 	}	
+	
+	@GetMapping("signin")
+	public String signin(Model model) {
+		model.addAttribute("data", "sign");
+		return "signin";
+	}	
 }
