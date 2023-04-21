@@ -8,30 +8,8 @@ var delay=3000;
 var timmer;
 var bullets;
 
-document.addEventListener("visibilitychange", function() {
-	console.log(document.visibilityState);
-  if(document.visibilityState=="hidden"){
-	  stop();
-  }else if(document.visibilityState=="visible"){
-	  auto();
-  }
-});
-
-
 $(function(){
-	items=$("#visual .item");
-	bullets=$("#visual .bullet");
-	move(0);//초기화
-	
-	auto();//타이머를 이용한 자동실행
-	
-	//$("#visual .wrap").hover(stop, auto);
-	
-	$(".btn-wrap .btn").hover(stop, auto);
-	$(".bullet-wrap .bullet").hover(stop, auto);
-	
-	$(".bullet-wrap .bullet").click(bulletClicked);
-	$(".auto-wrap button span").click(playStopClicked);
+	items=$(".slide1 .images1");
 });
 
 function playStopClicked(){
