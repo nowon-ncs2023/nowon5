@@ -15,10 +15,10 @@ public class SigninController {
 
 	private final SigninService service;
 	
-	@PostMapping("signin")
+	@PostMapping("/signin")
 	public String signin(MemberDTO dto, Model model) {
 		model.addAttribute("data", "signin");
 		service.save(dto);
-		return "login";
+		return "redirect:/login";
 	}	
 }
