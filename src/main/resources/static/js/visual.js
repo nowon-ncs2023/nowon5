@@ -1,81 +1,28 @@
 /**
  * 
  */
-var items;
-var target_idx=0;
+const outer = document.querySelector('.slide1');
+const innerList = document.querySelector('.images1');
+const inners = document.querySelectorAll('.slide1Img');
+let currentIndex = 0; // 현재 슬라이드 화면 인덱스
 
-var delay=3000;
-var timmer;
-var bullets;
+inners.forEach((inner) => {
+  inner.style.width = `${outer.clientWidth}px`; // inner의 width를 모두 outer의 width로 만들기
+})
 
-document.addEventListener("visibilitychange", function() {
-	console.log(document.visibilityState);
-  if(document.visibilityState=="hidden"){
-	  stop();
-  }else if(document.visibilityState=="visible"){
-	  auto();
-  }
+innerList.style.width = `${outer.clientWidth * inners.length}px`; // innerList의 width를 inner의 width * inner의 개수로 만들기
+
+const buttonLeft = document.querySelector('.back1');
+const buttonRight = document.querySelector('.next1');
+
+buttonLeft.addEventListener('click', () => {
+  currentIndex--;
+  currentIndex = currentIndex < 0 ? 0 : currentIndex; // index값이 0보다 작아질 경우 0으로 변경
+  innerList.style.marginLeft = `-${outer.clientWidth * currentIndex}px`; // index만큼 margin을 주어 옆으로 밀기
 });
 
-
-$(function(){
-	items=$("#visual .item");
-	bullets=$("#visual .bullet");
-	move(0);//초기화
-	
-	auto();//타이머를 이용한 자동실행
-	
-	//$("#visual .wrap").hover(stop, auto);
-	
-	$(".btn-wrap .btn").hover(stop, auto);
-	$(".bullet-wrap .bullet").hover(stop, auto);
-	
-	$(".bullet-wrap .bullet").click(bulletClicked);
-	$(".auto-wrap button span").click(playStopClicked);
+buttonRight.addEventListener('click', () => {
+  currentIndex++;
+  currentIndex = currentIndex >= inners.length ? inners.length - 1 : currentIndex; // index값이 inner의 총 개수보다 많아질 경우 마지막 인덱스값으로 변경
+  innerList.style.marginLeft = `-${outer.clientWidth * currentIndex}px`; // index만큼 margin을 주어 옆으로 밀기
 });
-
-function playStopClicked(){
-	$(this).hide();
-	$(this).siblings().show();
-	var playOrStop=$(this).index(); //0:play 1:stop
-	if(playOrStop==0)auto();
-	if(playOrStop==1)stop();
-}
-
-function auto(){
-	stop();
-	timmer=setTimeout(start, delay);
-	//console.log("타이머 시작");
-}
-function stop(){
-	clearTimeout(timmer);
-	//console.log("타이머 멈춤");
-}
-function start(){
-	move(1);
-	auto();
-}
-
-//클릭한 인덱스번호가 타켓이 되도록
-function bulletClicked(){
-	var bi=$(this).index();
-	target_idx=bi;
-	move(0);
-}
-//이미지를 좌(1)또는 우(-1)로 이동하는 함수
-function move(dir){
-	//var target_idx=$(".item.target").index();
-	target_idx=(target_idx+dir) % items.length;
-	var next=(target_idx+1) % items.length;
-	var prev=(target_idx-1) % items.length;
-	items.removeClass("target next prev");
-	items.eq(target_idx).addClass("target");
-	items.eq(next).addClass("next");
-	items.eq(prev).addClass("prev");
-	
-	bullets.removeClass("target");
-	bullets.eq(target_idx).addClass("target");
-	
-	$(".txt .target").text($(".item.target").index()+1);
-}
-
