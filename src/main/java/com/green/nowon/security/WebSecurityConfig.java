@@ -30,8 +30,7 @@ public class WebSecurityConfig {
 				authorize
 					.antMatchers("/css/**","/js/*","/images/**").permitAll()
 					.antMatchers("/","/signin","/signup").permitAll()//Specify that URLs are allowed by anyone.
-					.antMatchers(HttpMethod.GET,"/board").permitAll()
-					.antMatchers("/boards/*").hasAnyRole("USER","ADMIN")
+					.antMatchers("/boards-main").permitAll()
 					.antMatchers("/admin/*").hasRole("ADMIN")
 					//Can't configure antMatchers after anyRequest
 					.anyRequest()//설정한 나머지 url 

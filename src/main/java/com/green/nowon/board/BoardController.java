@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BoardController {
 
-	@GetMapping("/board")
+	@GetMapping("/boards-main")
 	public String boardPage() {
-		return "/board";
+		return "/boards/boardsmain";
 	}
 }
