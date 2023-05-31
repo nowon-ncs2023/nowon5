@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<insert id="save">
+	insert into inter_member(email, password)
+	values(#{email}, #{password})
+</insert>
