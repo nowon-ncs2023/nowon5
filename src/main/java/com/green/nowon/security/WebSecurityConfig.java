@@ -43,7 +43,7 @@ public class WebSecurityConfig {
 					.loginPage("/login") //로그인 페이지 이동
 					.loginProcessingUrl("/login") //form action과 일치하게 설정 post
 					.usernameParameter("email") //Defaults "username".
-					.passwordParameter("password") //Defaults "password".
+					.passwordParameter("pass") //Defaults "password".
 					.defaultSuccessUrl("/",true)
 					.permitAll()
 				//*/
