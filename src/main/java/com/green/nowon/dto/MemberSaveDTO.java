@@ -12,8 +12,11 @@ public class MemberSaveDTO {
 	private long no;
 	private String email;
 	private String pass;
+
 	private long greenMemberEntityNo;
 	private String roles;
+
+
 	
 	public MemberSaveDTO passEncode(String encodedPass) {
 		//암호화된 encodedPass 를 SaveDTO에 있는 pass에 다시 저장
