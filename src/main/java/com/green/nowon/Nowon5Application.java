@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.green.nowon.security.MyRole;
+
 @SpringBootApplication
 public class Nowon5Application {
 
@@ -17,5 +19,7 @@ public class Nowon5Application {
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder(14);
 	}
+	
+	
 
 }

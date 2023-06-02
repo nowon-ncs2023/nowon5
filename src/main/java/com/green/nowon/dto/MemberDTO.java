@@ -1,7 +1,9 @@
 package com.green.nowon.dto;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.context.annotation.Bean;
 
 import com.green.nowon.security.MyRole;
 
@@ -20,10 +22,18 @@ import lombok.ToString;
 @Getter
 @Setter
 public class MemberDTO {
+	
 	private long no;
 	private String email;
 	private String pass;
 	private String nickName;
+	private String role;
 	
-	private Set<MyRole> roles;
+	@Builder.Default //new HashSet<>() ; defalut 값으로 생성됨
+	private Set<MyRole> roles = new HashSet<>();
+
+	
+
+
+	
 }
