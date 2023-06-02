@@ -2,12 +2,20 @@ package com.green.nowon.dto;
 
 import java.util.Set;
 
+
 import com.green.nowon.security.MyRole;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @Getter
 @Setter

@@ -12,9 +12,9 @@ public class MainController {
 		return "login";
 	}	
 	
-	@GetMapping("/signin")
-	public String signin(Model model) {
+	@GetMapping("/signup")
+	public String signup(Model model) {
 		model.addAttribute("data", "sign");
-		return "signin";
+		return "signup";
 	}	
 }

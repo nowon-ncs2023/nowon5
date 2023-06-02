@@ -12,4 +12,6 @@ public interface LoginMapper {
 
 	Optional<MemberDTO> findById(String email);
 	
+	void save(MemberDTO dto);
+	
 }

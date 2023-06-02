@@ -5,20 +5,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.green.nowon.dto.MemberDTO;
-import com.green.nowon.service.SigninService;
+import com.green.nowon.dto.MemberSaveDTO;
+import com.green.nowon.service.SignupService;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class SigninController {
+public class SignupController {
 
-	private final SigninService service;
+	private final SignupService service;
 	
-	@PostMapping("/signin")
-	public String signin(MemberDTO dto, Model model) {
-		model.addAttribute("data", "signin");
+	@PostMapping("/signup")
+	public String signup(MemberSaveDTO dto) {
 		service.save(dto);
-		return "redirect:/login";
+		return "/login";
 	}	
 }
