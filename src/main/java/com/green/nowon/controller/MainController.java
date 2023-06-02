@@ -16,5 +16,6 @@ public class MainController {
 	public String signup(Model model) {
 		model.addAttribute("data", "sign");
 		return "signup";
-	}	
+	}
+	
 }

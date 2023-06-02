@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>상품 상세 페이지</h1>
+	<div class="wrap view-size">
+		<section id="detail">
+			<h1>상페정보</h1>
+				<table>
+					<tr>
+						<th>상품번호</th>
+						<td th:text="${detail.pcode}"></td>
+					</tr>
+					<tr>
+						<th>상품이름</th>
+						<td th:text="${detail.pname}"></td>
+					</tr>
+					<tr>
+						<th>상품가격</th>
+						<td th:text="${detail.price}"></td>
+					</tr>
+					<tr>
+						<th>상품 상세 정보</th>
+						<td th:text="${detail.pcontent}"></td>
+					</tr>
+					<tr>
+						<th>최초 등록일</th>
+						<td th:text="${detail.createdDate}"></td>
+					</tr>
+					<tr>
+						<th>최종 수정일</th>
+						<td th:text="${detail.updatedDate}"></td>
+					</tr>
+               <!-- <tr>
+						<td colspan="2" class="flex">
+							<button type="button" id="btn-update">수정</button>
+							<form th:action="|/board/${detail.bno}|" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+								<button>삭제</button>
+							</form>
+						</td>
+					</tr> -->
+				</table>
+		</section>
+	</div>
+</body>
+</html>
