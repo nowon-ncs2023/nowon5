@@ -10,6 +10,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -18,6 +20,7 @@ import com.zaxxer.hikari.HikariDataSource;
 //@MapperScan("com.green.nowon.mapper")
 @Configuration
 public class DataConfig { //myBatisConfig
+	
 	
 	@Bean
 	public DataSource dataSource() {

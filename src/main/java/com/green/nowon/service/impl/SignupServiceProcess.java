@@ -1,5 +1,6 @@
 package com.green.nowon.service.impl;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.green.nowon.dto.MemberDTO;
@@ -15,11 +16,15 @@ public class SignupServiceProcess implements SignupService {
 
 	private final LoginMapper mapper;
 	
+	
 	@Override
-	public void save(MemberSaveDTO dto) {
+	public void saveProcess(MemberSaveDTO dto) {
+		
 		MemberDTO entity = dto.toMemberDTO();
 		mapper.save(entity);
-		
+		mapper.role(dto);
+
 	}
+	
 
 }
