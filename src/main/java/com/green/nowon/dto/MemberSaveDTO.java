@@ -10,7 +10,7 @@ import lombok.ToString;
 public class MemberSaveDTO {
 	
 	private String email;
-	private String pass;	
+	private String pass;
 	
 	public MemberDTO toMemberDTO() {
 		return MemberDTO.builder()
