@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.green.nowon.dto.ProductsDTO;
+import com.green.nowon.dto.ReplyDTO;
 
 @Mapper
 public interface ProductsMapper {
@@ -18,4 +19,5 @@ public interface ProductsMapper {
 	
 	//상품 상세 조회
 	ProductsDTO findByPcode(int pcode);
+
 }

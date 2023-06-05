@@ -23,5 +23,8 @@ public class ProductsDTO {
 	private int price;
 	private LocalDateTime createdDate;
 	private LocalDateTime updatedDate;
+	
+	//green_member 테이블 외래키값
+	private String email;
 
 }
