@@ -1,5 +1,7 @@
 package com.green.nowon.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.green.nowon.dto.NoticeDTO;
@@ -7,8 +9,14 @@ import com.green.nowon.dto.NoticeDTO;
 @Mapper
 public interface NoticeMapper {
 	
-	// NoticeDTO findAll(int no, String title);
+	//게시글 등록
+	void save(NoticeDTO dto);
 
-	void write();
+	//게시글 리스트
+	List<NoticeDTO> list();
+
+	//게시글 상세조회
+	NoticeDTO findByNo(int no);
+
 	
 }
