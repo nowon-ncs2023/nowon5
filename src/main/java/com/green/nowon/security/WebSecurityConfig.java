@@ -31,6 +31,7 @@ public class WebSecurityConfig {
 					.antMatchers("/css/**","/js/*","/images/**").permitAll()
 					.antMatchers("/","/signin","/signup","/login", "/notice", "/notice-write").permitAll()//Specify that URLs are allowed by anyone.
 					.antMatchers(HttpMethod.GET,"/board").permitAll()
+					.antMatchers("/reply/*").hasAnyRole("USER", "ADMIN")
 					.antMatchers("/boards/*").hasAnyRole("USER","ADMIN")
 					.antMatchers("/admin/*").hasRole("ADMIN")
 					//Can't configure antMatchers after anyRequest

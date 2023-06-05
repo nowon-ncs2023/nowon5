@@ -12,33 +12,30 @@ import com.green.nowon.dto.ReplyDTO;
 import com.green.nowon.mapper.ProductsMapper;
 import com.green.nowon.mapper.ReplyMapper;
 import com.green.nowon.service.ProductsService;
+import com.green.nowon.service.ReplyService;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class ProductsServiceProcess implements ProductsService{
+public class ReplyServiceProcess implements ReplyService{
 	
-	private final ProductsMapper mapper;
+	private final ReplyMapper mapper;
+
 	
-
 	@Override
-	public void productsSave(ProductsDTO dto) {
-		mapper.save(dto);
+	public void replySave(ReplyDTO dto) {
+		mapper.replySave(dto);
 	}
 
-	@Override
-	public ArrayList<ProductsDTO> list() {
-		ArrayList<ProductsDTO> productsList = mapper.list();
-		return productsList;
-	}
 
 	@Override
-	public void detail(int pcode, Model model) {
-		ProductsDTO result = mapper.findByPcode(pcode);
-		model.addAttribute("detail", result);
+	public ArrayList<ReplyDTO> findByPcodeList(int pcode, Model model) {
+		ArrayList<ReplyDTO> replyList = mapper.replyList(pcode);
+		model.addAttribute("replyList", replyList);
+		return replyList;
 	}
-
+	
 	
 
 }
