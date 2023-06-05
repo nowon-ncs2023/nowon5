@@ -1,7 +1,7 @@
 # nowon5/ 쇼핑몰 구현 프로젝트
-
+---
 # to_do(공통)
-
+---
 
 - green_member 테이블과 my_role 테이블 연결: 적절한 role 부여('ADMIN', 'USER', ... etc)
 
