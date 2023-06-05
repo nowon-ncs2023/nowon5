@@ -27,11 +27,8 @@ public class MemberDTO {
 	private String email;
 	private String pass;
 	private String nickName;
-	private String role;
 	
-	@Builder.Default //new HashSet<>() ; defalut 값으로 생성됨
-	private Set<MyRole> roles = new HashSet<>();
-
+	private Set<MyRole> roles;
 	
 
 

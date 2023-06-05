@@ -25,7 +25,7 @@ public class SignupController {
 		System.out.println(">>>>> dto.getPass : " + dto.getPass());
 		//입력된 패스워드를 가져와서(dto.getPass()) encoder 로 암호화 해준다음 passEncode로 넘김
 		service.saveProcess(dto.passEncode(encoder.encode(dto.getPass())));
-		return "/login";
+		return "redirect:/login";
 		
 		
 	}	

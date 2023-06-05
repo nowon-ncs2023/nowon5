@@ -20,4 +20,9 @@ public class MainController {
 		return "signup";
 	}
 	
+	//구독하기 화면 연결
+	@GetMapping("/sub")
+	public String sub() {
+		return "sub";
+	}
 }
