@@ -3,9 +3,29 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.green.nowon.service.NoticeService">
+<mapper namespace="com.green.nowon.mapper.NoticeMapper">
  
-	<select id="wirte">
-		select * from notice
-	</select>
+	<!-- 게시글 저장 -->
+ 	<insert id="save" parameterType="com.green.nowon.dto.NoticeDTO">
+        INSERT INTO notice(title, id, content
+        )VALUES (
+                 
+                 #{title},
+                 #{id},
+                 #{content}
+        )
+    </insert>
+ 
+	<!-- 게시글 상세정보 조회 -->
+	<select id="list" resultType="com.green.nowon.dto.NoticeDTO">
+		SELECT * FROM notice order by no desc
+    </select>
+
+
+	<!-- 게시글 리스트 조회 -->
+    <select id="findByNo" resultType="com.green.nowon.dto.NoticeDTO">
+        SELECT * FROM notice WHERE no = #{no}
+    </select> 
+    
+    
 </mapper>

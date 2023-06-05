@@ -21,7 +21,9 @@ $(document).ready(function() {
 <body>
 	<h1>게시판 작성</h1>
 	공지사항을 작성하세요.
-	<form action="/notice-write" method="post">
+	<a href="/home">홈</a>
+	<a href="/notice">게시판</a>
+	<form action="/notice-save" method="post">
 		<p>
 			<input type="text" name="title" placeholder="제목을 입력하세요.">
 		</p>
@@ -38,7 +40,5 @@ $(document).ready(function() {
 		</p>
 	</form>
 	
-
-
 </body>
 </html>

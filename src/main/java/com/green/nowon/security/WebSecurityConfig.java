@@ -29,7 +29,7 @@ public class WebSecurityConfig {
 			.authorizeHttpRequests(authorize->
 				authorize
 					.antMatchers("/css/**","/js/*","/images/**").permitAll()
-					.antMatchers("/","/signin","/signup","/login", "/notice", "/notice-write").permitAll()//Specify that URLs are allowed by anyone.
+					.antMatchers("/","/signin","/signup","/login", "/notice", "/notice-write", "/notice-detail").permitAll()//Specify that URLs are allowed by anyone.
 					.antMatchers(HttpMethod.GET,"/board").permitAll()
 					.antMatchers("/reply/*").hasAnyRole("USER", "ADMIN")
 					.antMatchers("/boards/*").hasAnyRole("USER","ADMIN")
