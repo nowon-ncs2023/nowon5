@@ -3,9 +3,6 @@
 # to_do(공통)
 
 
-- green_member 테이블과 my_role 테이블 연결: 적절한 role 부여('ADMIN', 'USER', ... etc)
-
-
 - ~~비밀번호 암호화~~ 
 
 
@@ -13,10 +10,6 @@
 
 
 -  ~~controller가 아닌 WebSecurityConfig로 로그인 하기 @Bean @Service 둘 중 하나만 사용하기~~
-
-
-- ~~로그인 / 로그아웃 구현: 수정, 삭제 버튼 권한에 따라 노출~~
-
 
 - 각종 CSS 디자인
 
@@ -33,6 +26,10 @@
 
 ---
 ### 보경
+
+- ~~green_member 테이블과 my_role 테이블 연결: 적절한 role 부여('ADMIN', 'USER', ... etc)~~
+
+- ~~로그인 / 로그아웃 구현: 수정, 삭제 버튼 권한에 따라 노출~~
 
 ---
 ### 소연
