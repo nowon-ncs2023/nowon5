@@ -21,7 +21,11 @@
 				<ul class="flex center">
 					<li class="flex">
 						<a sec:authorize="isAnonymous()" href="/login">로그인</a>
+						<a sec:authorize="isAuthenticated()" href="/sub">구독하기</a>
 						<div class="flex" sec:authorize="isAuthenticated()">
+							<span sec:authorize="hasRole('ADMIN')">관리자</span>
+							<span sec:authorize="hasRole('VIP')">VIP</span>
+							<span sec:authorize="hasRole('USER') and !hasRole('VIP')">일반회원</span>
 							<span sec:authentication="name"></span>
 							<a href="/products-registration">상품등록</a>
 							<form action="/logout" method="post">
