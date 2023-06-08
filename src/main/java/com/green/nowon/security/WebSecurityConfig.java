@@ -36,22 +36,33 @@ public class WebSecurityConfig {
 					.antMatchers("/admin/*").hasRole("ADMIN")
 					//Can't configure antMatchers after anyRequest
 					.anyRequest()//설정한 나머지 url 
-							.permitAll()//인증user이어야합니다.-->user권한이 필요합니다.
+						.authenticated()//인증user이어야합니다.-->user권한이 필요합니다.
 				)
-			.formLogin(form->//{}
+			.formLogin(login->//{}
 				//*
-				form
+				login
 					.loginPage("/login") //로그인 페이지 이동
 					.loginProcessingUrl("/login") //form action과 일치하게 설정 post
 					.usernameParameter("email") //Defaults "username".
 					.passwordParameter("pass") //Defaults "password".
-					.defaultSuccessUrl("/",true)
-					.permitAll()
+					//.defaultSuccessUrl("/",true)
+					.successHandler(mySuccessHandler())
+					.permitAll())
+			
+			.logout(logout->logout
+					.logoutUrl("/logout")
+					.logoutSuccessUrl("/")
+					.deleteCookies("JSESSIONID"))
 				//*/
-			)
+			
 			;
 			
 		return http.build();
+	}
+	
+	@Bean
+	AuthenticationSuccessHandler mySuccessHandler() {
+		return new MySuccessHandler();
 	}
 
 }
