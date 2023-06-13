@@ -15,9 +15,11 @@ import lombok.ToString;
 public class NoticeDTO {
 
 	private long no;
-	private String title;
-	private String id;
+	private String title;	
 	private String content;
 	private LocalDateTime createdDate;	
 	private LocalDateTime updatedDate;
+	
+	//green_member 테이블 외래키값
+	private String email;
 }

@@ -18,5 +18,11 @@ public interface NoticeMapper {
 	//게시글 상세조회
 	NoticeDTO findByNo(int no);
 
+	//게시글 삭제
+	void deleteByNo(long no);
+
+	//게시글 수정
+	void updateByNo(NoticeDTO dto);
+
 	
 }
