@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+			<!-- include libraries(jQuery, bootstrap) -->
+	<link href="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+	<!-- include summernote css/js -->
+	<link href="//cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+	<script src="//cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		  $('#summernote').summernote();
+		});
+		
+		//수정버튼 누르면 수정화면으로 변경
+		function clickedBtnUpdate(){
+			//1.클래스가 detail-update 인거 보이게하자
+			$(".detail-update").show().css('display', 'flex');
+			//2.클래스가 detail-default 인거 안보이게하자
+			$(".detail-default").hide();
+		}
+		
+		function clickedBtnCancel(){
+			$(".detail-update").hide();
+			$(".detail-default").show();
+		}
+		
+	</script>
+	</head>
+	<body>
+		<h1>메모 상세페이지</h1>
+		<a href="/">홈</a>
+		<table>
+			<tr>
+				<th>글번호</th>
+				<td th:text="${detail.mno}"></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td th:text="${detail.title}"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td th:utext="${detail.content}"></td>
+			</tr>
+			<tr>
+				<th>작성자</th>
+				<td th:text="${detail.email}"></td>
+			</tr>
+			<tr>
+				<th>작성일자</th>
+				<td th:text="${detail.createdDate}"></td>
+			</tr>
+			<tr>
+				<th>수정일자</th>
+				<td th:text="${detail.updatedDate}"></td>
+			</tr>
+			
+		</table>
+		
+		
+	
+	</body>
+</html>
