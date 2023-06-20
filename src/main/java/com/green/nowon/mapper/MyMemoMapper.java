@@ -16,11 +16,13 @@ public interface MyMemoMapper {
 	ArrayList<MymemoDTO> list();
 
 	//메모 상세조회
-	MymemoDTO findByMno(int mno);
+	MymemoDTO findByMno(long mno);
 
 	//메모업데이트
-	
 	void updateByMno(MymemoDTO mno);
+
+	//메모삭제
+	void deleteByMno(long mno);
 
 	
 

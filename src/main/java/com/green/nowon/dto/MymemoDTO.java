@@ -24,7 +24,7 @@ public class MymemoDTO {
 	private LocalDateTime createdDate;
 	private LocalDateTime updatedDate;
 	
-	public MymemoDTO mno(int mno) {
+	public MymemoDTO mno(long mno) {
 		this.mno=mno;
 		return this;
 	}

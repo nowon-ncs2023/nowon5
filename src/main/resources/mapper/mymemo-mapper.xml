@@ -22,4 +22,8 @@
 		where mno=#{mno}
 	</update>
 	
+	<delete id="deleteByMno">
+		delete from my_memo
+		where mno=#{mno}
+	</delete>
 </mapper>

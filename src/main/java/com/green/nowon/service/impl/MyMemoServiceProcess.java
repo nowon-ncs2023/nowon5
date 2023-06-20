@@ -31,13 +31,13 @@ public class MyMemoServiceProcess implements MyMemoService{
 	}
 
 	@Override
-	public void detail(int mno, Model model) {
+	public void detail(long mno, Model model) {
 		MymemoDTO result = mapper.findByMno(mno);
 		model.addAttribute("detail", result);
 	}
 
 	@Override
-	public String updateProcess(int mno, MymemoDTO dto) throws NoSuchElementException{
+	public String updateProcess(long mno, MymemoDTO dto) throws NoSuchElementException{
 		
 		
 		MymemoDTO dt =mapper.findByMno(mno);
@@ -46,8 +46,12 @@ public class MyMemoServiceProcess implements MyMemoService{
 		mapper.updateByMno(dto.mno(mno));
 		return "redirect:/mymemo/" +mno;
 	}
-
 	
+	@Override
+	public String deleteProcess(long mno) {
+		mapper.deleteByMno(mno);
+		return "redirect:/mymemo-list/";
+	}
 
 	
 }

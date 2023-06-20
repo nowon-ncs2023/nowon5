@@ -6,6 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -56,15 +57,21 @@ public class MyMemoController {
 	
 	// 마이페이지 메모 조회
 	@GetMapping("/mymemo/{no}")
-	public String detail(@PathVariable(name = "no") int mno, Model model) {
+	public String detail(@PathVariable(name = "no") long mno, Model model) {
 		service.detail(mno,model);
 		return "/memo/mymemo-detail";
 	}
 	
 	// 메모업데이트
 	@PutMapping("/mymemo/{no}")
-	public String update(@PathVariable int mno, MymemoDTO dto) {
+	public String update(@PathVariable(name = "no") long mno, MymemoDTO dto) {
 		return service.updateProcess(mno, dto);
+	}
+	
+	//메모 삭제
+	@DeleteMapping("/mymemo/{no}")
+	public String delete(@PathVariable(name = "no") long mno) {
+		return service.deleteProcess(mno);
 	}
 	
 }

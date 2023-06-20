@@ -15,10 +15,13 @@ public interface MyMemoService {
 	ArrayList<MymemoDTO> list();
 
 	// 메모 상세페이지 
-	void detail(int mno, Model model);
+	void detail(long mno, Model model);
 
 	//메모업데이트
-	String updateProcess(int mno, MymemoDTO dto);
+	String updateProcess(long mno, MymemoDTO dto);
+
+	//메모 삭제
+	String deleteProcess(long mno);
 
 	
 
