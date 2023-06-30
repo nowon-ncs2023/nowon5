@@ -6,13 +6,13 @@
 <mapper namespace="com.green.nowon.mapper.NoticeMapper">
  
 	<!-- 게시글 저장 -->
- 	<insert id="save" parameterType="com.green.nowon.dto.NoticeDTO">
-        INSERT INTO notice(title, id, content
+ 	<insert id="save">
+        INSERT INTO notice(title, content, email
         )VALUES (
                  
                  #{title},
-                 #{id},
-                 #{content}
+                 #{content},
+                 #{email}
         )
     </insert>
  
@@ -27,5 +27,19 @@
         SELECT * FROM notice WHERE no = #{no}
     </select> 
     
+	<!-- 게시글 수정 -->
+    <update id="updateByNo">
+        UPDATE notice
+        SET
+             title = #{title}
+            , content = #{content}
+           
+        WHERE
+            no = #{no}
+    </update>
     
+    	<!-- 게시글 삭제 -->
+    <delete id="deleteByNo">
+        delete from notice WHERE no = #{no}
+    </delete> 
 </mapper>
