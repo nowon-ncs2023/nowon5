@@ -40,4 +40,19 @@ public class NoticeServiceProcess implements NoticeService {
 		model.addAttribute("detail", result);
 	}
 
+	//게시글 삭제
+	@Override
+	public void delete(long no) {
+		// TODO Auto-generated method stub
+		 mapper.deleteByNo(no);
+	}
+	
+	//게시글 수정
+	@Override
+	public void update(NoticeDTO dto) {
+		// TODO Auto-generated method stub
+		mapper.updateByNo(dto);
+	}
+
+
 }

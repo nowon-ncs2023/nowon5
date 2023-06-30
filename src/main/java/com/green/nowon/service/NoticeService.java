@@ -18,7 +18,11 @@ public interface NoticeService {
 	//게시글 상세 페이지 조회
 	void noticeDetail(int no, Model model);
 
+	//게시글 삭제
+	void delete(long no);
 
+	//게시글 수정
+	void update(NoticeDTO dto);
 
 
 }
